@@ -1,15 +1,16 @@
 public class Product {
 	
 	private String model;
-	private int year;
+	private int year, stock;
 	private String manufacturer;
-	private double price;
+	private double price, discount;
 	
 	public Product(String model, int year, String manufacturer, double price) {
 		this.model = model;
 		this.year = year;
 		this.manufacturer = manufacturer;
 		this.price = price;
+		this.stock = stock;
 	}
 	
 	public String getModel() {
@@ -26,6 +27,14 @@ public class Product {
 	
 	public double getPrice() {
 		return this.price;
+	}
+	
+	public int getStock() {
+		return this.getStock();
+	}
+	
+	public double getDiscount() {
+		return this.getDiscount();
 	}
 	
 	public void setModel(String nModel) {
@@ -47,4 +56,14 @@ public class Product {
 	public String toString() {
 		return "Model: "+getModel()+". Year: "+getYear()+". Manufacturer: "+getManufacturer()+". Price: "+getPrice()+".";
 	}
+	
+	@Override()
+    public boolean equals(Object other) {
+        if (other instanceof Product) {
+            Product otherProduct = (Product) other;
+            return otherProduct.getModel().equals(this.getModel());
+        }
+
+        return false;
+    } 
 }

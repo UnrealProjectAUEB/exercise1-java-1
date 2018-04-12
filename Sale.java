@@ -4,15 +4,16 @@ public class Sale {
 	private double finalTotalCost;
 	private int id;
 	private static int saleID = 0;
-	Product sale;
+	Product product;
 	
-	public Sale(Product sale, String clientName, String clientTelNumb, String dateOfSale, double finalTotalCost) {
+	public Sale(Product p, String clientName, String clientTelNumb, String dateOfSale, double finalTotalCost) {
 		this.id = giveSaleID();
-		this.productSold = sale.getModel();
+		//this.productSold = p.getModel();
 		this.clientName = clientName;
 		this.clientTelNum = clientTelNumb;
 		this.dateOfSale = dateOfSale;
 		this.finalTotalCost = finalTotalCost;
+		this.product = p;
 	}
 	
 	public static int giveSaleID() {
